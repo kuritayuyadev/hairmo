@@ -1,0 +1,2 @@
+module CosmeticiansHelper
+end
