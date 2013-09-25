@@ -1,4 +1,20 @@
 Hairmo::Application.routes.draw do
+  get "wanted_lists/new"
+
+  get "wanted_lists/show"
+
+  get "wanted_lists/edit"
+
+  get "wanted_lists/delete"
+
+  get "cosmeticians/new"
+
+  get "cosmeticians/show"
+
+  get "cosmeticians/edit"
+
+  get "cosmeticians/delete"
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
