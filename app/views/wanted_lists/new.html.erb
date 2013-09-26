@@ -1,5 +1,7 @@
-<%= @wantedlist %>
+<%= form_for (@wantedlist),:url => {:action => 'new'} do |f| %>
 
-<h1>テスト</h1>
+<%= f.label :name %>
+<%= f.text_field :name %>
 
-
+<%= f.submit "Create my list", class: "btn btn-large btn-primary" %>
+<% end %>
