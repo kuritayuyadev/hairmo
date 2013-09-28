@@ -2,6 +2,33 @@
 
 <%= f.label :name %>
 <%= f.text_field :name %>
+<br/>
+
+<%= f.label :days %>
+<%= f.datetime_select :days,:use_month_numbers => true%>
+<br/>
+
+<%= f.label :sex %> man
+<%= f.radio_button 'sex', '0', {:checked => true} %>
+woman
+<%= f.radio_button 'sex', '1', {:checked => true} %>
+<br/>
+
+<%= f.label :hair_style %>
+<%= f.text_field :hair_style %>
+<br/>
+
+
+
+<%= f.label :price %>
+<%= f.text_field :price %>
+<br/>
+
+
+<%= f.label :memo %>
+<%= f.text_field :memo %>
+
+
 
 <%= f.submit "Create my list", class: "btn btn-large btn-primary" %>
 <% end %>
