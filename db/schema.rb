@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130925104436) do
+ActiveRecord::Schema.define(:version => 20130928155519) do
 
   create_table "cosmeticians", :force => true do |t|
     t.string   "name"
@@ -27,13 +27,14 @@ ActiveRecord::Schema.define(:version => 20130925104436) do
   create_table "wantedlists", :force => true do |t|
     t.integer  "cosmeticians_id"
     t.string   "name"
-    t.string   "days"
+    t.string   "days_old"
     t.boolean  "sex"
     t.string   "hair_style"
     t.integer  "price"
     t.string   "memo"
     t.datetime "created_at",      :null => false
     t.datetime "updated_at",      :null => false
+    t.time     "days"
   end
 
 end
