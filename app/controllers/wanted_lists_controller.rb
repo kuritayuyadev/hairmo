@@ -11,9 +11,9 @@ class WantedListsController < ApplicationController
 
 
   def create
-    @wantedlist = wantedlist.new(params[:wantedlist])
+    @wantedlist = Wantedlist.new(params[:wantedlist])
     if @wantedlist.save
-      redirect_to @wantedlist
+      render 'show'
     else
       render 'new'
     end
