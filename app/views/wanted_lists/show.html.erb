@@ -1,6 +1,12 @@
 <h1>name <%= @wantedlist.name %><br/>
 days <%= @wantedlist.days %><br/>
-sex <%= @wantedlist.sex %><br/>
+sex 
+<% if @wantedlist.sex == true  %>
+woman
+<% else %>
+man
+<% end %>
+<br/>
 hair_style <%= @wantedlist.hair_style %><br/>
 price <%= @wantedlist.price %><br/>
 memo <%= @wantedlist.memo %><br/>
