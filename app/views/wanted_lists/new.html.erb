@@ -7,11 +7,14 @@
 <%= f.text_field :name %>
 <br/>
 
+
+<div class="field">
 <b>
 <%= f.label :days %>
 </b>
 <br/>
-<%= f.datetime_select :days,:use_month_numbers => true%>
+<%= f.text_field :days,:class => 'datepicker' %>
+</div>
 <br/>
 
 <b>
