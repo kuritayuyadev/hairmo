@@ -1,2 +1,9 @@
 <h1>Cosmeticians#show</h1>
-<p>Find me in app/views/cosmeticians/show.html.erb</p>
+
+<%= gravatar_for @cosmetician %>
+<%= @cosmetician.name %>
+<%= @cosmetician.email %>
+<%= @cosmetician.area_id%>
+<%= @cosmetician.password %>
+<%= @cosmetician.salon_address %>
+<%= @cosmetician.salon_name %>

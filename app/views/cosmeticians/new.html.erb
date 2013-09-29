@@ -1,2 +1,16 @@
 <h1>Cosmeticians#new</h1>
-<p>Find me in app/views/cosmeticians/new.html.erb</p>
+
+<div>
+	<%= form_for(@cosmetician) do |f| %>
+
+		<%=f.label :name %>
+		<%=f.text_field :name %>
+	
+		<%=f.label :email %>
+		<%=f.text_field :email %>
+	
+	
+		<%=f.submit "Create my account" %>
+
+	<%end%>
+</div>
