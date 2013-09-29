@@ -5,6 +5,8 @@ class CosmeticiansController < ApplicationController
 
   def show
     @cosmetician = Cosmetician.find(params[:id])
+    @wantedlist = @cosmetician.wantedlists
+
   end
 
   def create

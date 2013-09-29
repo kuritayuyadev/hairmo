@@ -11,11 +11,11 @@
 <%= f.label :sex %> man
 <%= f.radio_button 'sex', '0', {:checked => true} %>
 woman
-<%= f.radio_button 'sex', '1', {:checked => true} %>
+<%= f.radio_button 'sex', '1' %>
 <br/>
 
 <%= f.label :hair_style %>
-<%= f.text_field :hair_style %>
+<%= f.select :hair_style,{"long" => "long","short" =>"short"}, :prompt => "Please select" %>
 <br/>
 
 
@@ -27,6 +27,8 @@ woman
 
 <%= f.label :memo %>
 <%= f.text_field :memo %>
+<br/>
+
 
 
 
