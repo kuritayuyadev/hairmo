@@ -1,6 +1,7 @@
 Hairmo::Application.routes.draw do
   resources :cosmeticians
   resources :wanted_lists
+  resources :sessions, only: [:new,:create,:destroy]
   #static page routes
   root to: 'static_pages#home'
 
@@ -10,7 +11,17 @@ Hairmo::Application.routes.draw do
 
   #Sign up by cosmeticians controller
   match '/signup',  to:'cosmeticians#new'
+  #Sign in/out by session controller
+  match '/signin',	to:'sessions#new'
+  match '/signout', to:'sessions#destroy', via: :destroy
 
+
+
+
+
+
+
+##################### no edited ###############################
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

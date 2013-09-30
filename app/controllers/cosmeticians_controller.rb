@@ -10,6 +10,7 @@ class CosmeticiansController < ApplicationController
   def create
 	  @cosmetician = Cosmetician.new(params[:cosmetician])
 	  if @cosmetician.save
+		  sign_in @cosmetician
 		  redirect_to @cosmetician
 	  else
 		  render 'new'
