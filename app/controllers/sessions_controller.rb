@@ -4,10 +4,10 @@ class SessionsController < ApplicationController
 	end
 
 	def create
-		cosmetician = Cosmetician.find_by_name(params[:session][:name].downcase)
+		cosmetician = Cosmetician.find_by_email(params[:session][:email].downcase)
 		if cosmetician && cosmetician.authenticate(params[:session][:password])
 			sign_in cosmetician
-			redirect_to cosmetician
+			redirect_back_or cosmetician
 		else
 			render 'new'
 		end

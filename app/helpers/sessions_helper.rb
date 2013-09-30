@@ -21,4 +21,17 @@ module SessionsHelper
 	def current_cosmetician
 		@current_cosmetician ||= Cosmetician.find_by_remember_token(cookies[:remember_token])
 	end
+
+	def current_cosmetician?(cosmetician)
+		cosmetician == current_cosmetician
+	end
+
+	def redirect_back_or(default)
+		redirect_to(session[:return_to]||default)
+		session.delete(:return_to)
+	end
+
+	def store_location
+		session[:return_to] = request.url
+	end
 end

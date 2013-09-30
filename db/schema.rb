@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130930055844) do
+ActiveRecord::Schema.define(:version => 20130930085525) do
 
   create_table "cosmeticians", :force => true do |t|
     t.string   "name"
@@ -20,10 +20,11 @@ ActiveRecord::Schema.define(:version => 20130930055844) do
     t.string   "salon_name"
     t.integer  "area_id"
     t.string   "salon_address"
-    t.datetime "created_at",      :null => false
-    t.datetime "updated_at",      :null => false
+    t.datetime "created_at",                         :null => false
+    t.datetime "updated_at",                         :null => false
     t.string   "remember_token"
     t.string   "password_digest"
+    t.boolean  "admin",           :default => false
   end
 
   add_index "cosmeticians", ["remember_token"], :name => "index_cosmeticians_on_remember_token"
