@@ -8,6 +8,7 @@ class CosmeticiansController < ApplicationController
   end
 
   def new
+<<<<<<< HEAD
 	  @cosmetician = Cosmetician.new
   end
 
@@ -25,6 +26,13 @@ class CosmeticiansController < ApplicationController
 	  else
 		  render 'new'
 	  end
+=======
+    @cosmetician = Cosmetician.all
+  end
+
+  def show
+    @cosmetician = Cosmetician.find(params[:id])
+>>>>>>> test page
   end
 
   def edit
