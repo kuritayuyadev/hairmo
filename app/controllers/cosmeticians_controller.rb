@@ -16,7 +16,9 @@ class CosmeticiansController < ApplicationController
   end
 
   def create
-	  @cosmetician = Cosmetician.new(params[:cosmetician])
+	  #facebook ?
+	  #auth = request.env["omniauth.auth"]
+	  @cosmetician = Cosmetician.new(params[:cosmetician]) #|| Cosmetician.create_with_omniauth(auth)
 	  if @cosmetician.save
 		  sign_in @cosmetician
 		  redirect_to @cosmetician
@@ -64,5 +66,6 @@ class CosmeticiansController < ApplicationController
   def admin_cosmetician
 	  redirect_to(root_path) unless current_cosmetician.admin?
   end
+
 	
 end
