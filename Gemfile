@@ -1,4 +1,3 @@
-
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.13'
@@ -7,9 +6,14 @@ gem 'bcrypt-ruby', '3.0.1'
 gem 'faker', '1.0.1'
 gem 'will_paginate', '3.0.3'
 gem 'bootstrap-will_paginate', '0.0.6'
+gem 'sqlite3','1.3.5'
+gem 'omniauth'
+gem 'omniauth-facebook'
+gem 'better_errors'
+gem 'binding_of_caller'
 
 group :development, :test do
-    gem 'sqlite3', '1.3.5'
+    gem 'sqlite3','1.3.5'
     gem 'rspec-rails', '2.11.0'
 end
 
@@ -23,13 +27,9 @@ end
 
 group :development do
   gem 'annotate', '2.5.0'
-
-  gem 'jquery-rails', '2.0.2'
-
-  # エラー画面をわかりやすく整形してくれる
   gem 'better_errors'
-  # better_errorsの画面上にirb/pry(PERL)を表示する
   gem 'binding_of_caller'
+  gem 'jquery-rails', '2.0.2'
 
 end
 
@@ -42,5 +42,4 @@ end
 
 group :production do
   gem 'pg', '0.12.2'
-
 end

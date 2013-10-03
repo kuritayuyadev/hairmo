@@ -1,9 +1,11 @@
-<h1><%= @cosmetician.name %>
-<%= gravatar_for @cosmetician %>
-</h1>,
-<%= @cosmetician.email %>
-<br/>
+<h1>Cosmeticians#show</h1>
 
+<!-- gravatar_for @cosmetician -->
+<%= @cosmetician.name %>
+<%= @cosmetician.area_id%>
+<%= @cosmetician.salon_address %>
+<%= @cosmetician.salon_name %>
+<br/>
 
 <div class="span8">
 <% if @cosmetician.wantedlists.any? %>
@@ -13,5 +15,4 @@
 </ol>
 <%= will_paginate @wantedlists %>
 <% end %>
-</div>
 </div>

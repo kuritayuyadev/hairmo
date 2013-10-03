@@ -10,7 +10,6 @@
 # you'll amass, the slower it'll run and the greater likelihood for issues).
 #
 # It's strongly recommended to check this file into your version control system.
-
 ActiveRecord::Schema.define(:version => 20130929154406) do
 
   create_table "areas", :force => true do |t|
@@ -22,13 +21,18 @@ ActiveRecord::Schema.define(:version => 20130929154406) do
   create_table "cosmeticians", :force => true do |t|
     t.string   "name"
     t.string   "email"
-    t.string   "password"
     t.string   "salon_name"
     t.integer  "area_id"
     t.string   "salon_address"
-    t.datetime "created_at",    :null => false
-    t.datetime "updated_at",    :null => false
+    t.datetime "created_at",                                     :null => false
+    t.datetime "updated_at",                                     :null => false
+    t.string   "remember_token"
+    t.boolean  "admin",                       :default => false
+    t.string   "provider"
+    t.integer  "uid",            :limit => 8
   end
+
+  add_index "cosmeticians", ["remember_token"], :name => "index_cosmeticians_on_remember_token"
 
   create_table "wantedlists", :force => true do |t|
     t.integer  "cosmeticians_id"
@@ -42,5 +46,4 @@ ActiveRecord::Schema.define(:version => 20130929154406) do
     t.datetime "updated_at",      :null => false
     t.time     "days"
   end
-
 end

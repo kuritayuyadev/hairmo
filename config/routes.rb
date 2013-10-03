@@ -1,7 +1,27 @@
 Hairmo::Application.routes.draw do
-
   resources :cosmeticians
   resources :wanted_lists
+  resources :sessions, only: [:new,:create,:destroy]
+  #static page routes
+  root to: 'static_pages#home'
+
+  match '/help',    to: 'static_pages#help'
+  match '/about',   to: 'static_pages#about'
+  match '/contact', to: 'static_pages#contact'  
+
+  #Sign up by cosmeticians controller
+  match '/signup',  to:'cosmeticians#new'
+  #Sign in/out by session controller
+  match '/signin',	to:'sessions#new'
+  match '/signout', to:'sessions#destroy', via: :destroy
+
+  #facebook login 
+  #OmniAuth
+  match "/auth/:provider/callback" => "sessions#callback"
+  match "/logout" => "sessions#destroy", :as => :logout
+
+
+
 
 
   # The priority is based upon order of creation:

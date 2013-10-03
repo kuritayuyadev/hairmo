@@ -1,2 +1,29 @@
 <h1>Cosmeticians#edit</h1>
-<p>Find me in app/views/cosmeticians/edit.html.erb</p>
+<h2>update your profile</h2>
+
+<div>
+	<%= form_for(@cosmetician) do |f| %>
+
+		<%= f.label :name %>
+		<%= f.text_field :name %>
+
+		<%= f.label :email %>
+		<%= f.text_field :email %>
+
+		<%= f.label :password %>
+		<%= f.password_field :password %>
+
+		<%= f.label :salon_name %>
+		<%= f.text_field :salon_name %>
+
+		<%= f.label :salon_address %>
+		<%= f.text_field :salon_address %>
+
+		<%= f.submit "Save Changes" %>
+	<%end%>
+
+	<%= gravatar_for @cosmetician %>
+	<a href="http://gravatar.com/emails">Change</a>
+</div>
+
+

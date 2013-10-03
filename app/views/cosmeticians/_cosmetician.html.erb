@@ -1,0 +1,7 @@
+<li>
+<%= link_to cosmetician.name, cosmetician %>
+<% if current_cosmetician.admin? && !current_cosmetician?(cosmetician) %>
+	|<%= link_to "delete", cosmetician, method: :delete, data: {confirm: "You sure?"} %>
+<% end %>
+</li>
+
