@@ -1,18 +1,24 @@
 class WantedListsController < ApplicationController
 
 
+  def index
+
+  end
+
+
+
   def new
-    @wantedlist = Wantedlist.new
+    @wantedlists = Wantedlist.new
   end
 
   def show
-    @wantedlist = Wantedlist.find(params[:id])
+    @wantedlists = Wantedlist.find(params[:id])
   end
 
 
   def create
-    @wantedlist = Wantedlist.new(params[:wantedlist])
-    if @wantedlist.save
+    @wantedlists = Wantedlist.new(params[:wantedlist])
+    if @wantedlists.save
       render 'show'
     else
       render 'new'

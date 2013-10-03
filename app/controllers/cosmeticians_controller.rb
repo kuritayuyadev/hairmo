@@ -5,7 +5,7 @@ class CosmeticiansController < ApplicationController
 
   def show
     @cosmetician = Cosmetician.find(params[:id])
-    @wantedlist = @cosmetician.wantedlists
+    @wantedlists = @cosmetician.wantedlists.paginate(page:params[:page])
 
   end
 

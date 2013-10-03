@@ -3,4 +3,15 @@
 </h1>,
 <%= @cosmetician.email %>
 <br/>
-<%=  @wantedlist %>
+
+
+<div class="span8">
+<% if @cosmetician.wantedlists.any? %>
+<h3>Wantedlitsts (<%= @cosmetician.wantedlists.count %>)</h3>
+<ol class="wantedlists">
+<%= render @wantedlists %>
+</ol>
+<%= will_paginate @wantedlists %>
+<% end %>
+</div>
+</div>

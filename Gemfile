@@ -23,9 +23,15 @@ end
 
 group :development do
   gem 'annotate', '2.5.0'
-end
 
-gem 'jquery-rails', '2.0.2'
+  gem 'jquery-rails', '2.0.2'
+
+  # エラー画面をわかりやすく整形してくれる
+  gem 'better_errors'
+  # better_errorsの画面上にirb/pry(PERL)を表示する
+  gem 'binding_of_caller'
+
+end
 
 group :test do
   gem 'capybara', '1.1.2'
