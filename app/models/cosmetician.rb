@@ -1,10 +1,6 @@
 class Cosmetician < ActiveRecord::Base
-<<<<<<< HEAD
   attr_accessible :area_id, :email, :name, :salon_address, :salon_name, :provider, :uid
   has_many :wantedlists,dependent: :destroy,foreign_key: "cosmeticians_id"
-=======
-  attr_accessible :area_id, :email, :name, :salon_address, :salon_name, :provider, :uid ,:image
->>>>>>> origin/master
 
   #has_secure_password
   before_save {|cosmetician| cosmetician.email = email} #email.downcase
@@ -24,7 +20,6 @@ class Cosmetician < ActiveRecord::Base
 		end
 	end
   end
-	  
 
 
 

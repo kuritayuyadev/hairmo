@@ -10,17 +10,14 @@
 # you'll amass, the slower it'll run and the greater likelihood for issues).
 #
 # It's strongly recommended to check this file into your version control system.
-ActiveRecord::Schema.define(:version => 20130929154406) do
 
-<<<<<<< HEAD
+ActiveRecord::Schema.define(:version => 20131003130152) do
+
   create_table "areas", :force => true do |t|
     t.string   "name"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
-=======
-ActiveRecord::Schema.define(:version => 20131003130152) do
->>>>>>> origin/master
 
   create_table "cosmeticians", :force => true do |t|
     t.string   "name"
@@ -31,9 +28,9 @@ ActiveRecord::Schema.define(:version => 20131003130152) do
     t.datetime "created_at",                                     :null => false
     t.datetime "updated_at",                                     :null => false
     t.string   "remember_token"
-    t.boolean  "admin",                       :default => false
     t.string   "provider"
     t.integer  "uid",            :limit => 8
+    t.boolean  "admin",                       :default => false
     t.string   "image"
   end
 
@@ -51,4 +48,5 @@ ActiveRecord::Schema.define(:version => 20131003130152) do
     t.datetime "updated_at",      :null => false
     t.time     "days"
   end
+
 end
