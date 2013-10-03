@@ -4,7 +4,6 @@ Hairmo::Application.routes.draw do
   resources :wanted_lists
 
 
-
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

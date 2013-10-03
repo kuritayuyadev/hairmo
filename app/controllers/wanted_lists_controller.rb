@@ -1,19 +1,25 @@
 class WantedListsController < ApplicationController
 
 
+  def index
+
+  end
+
+
+
   def new
-    @wantedlist = Wantedlist.new
+    @wantedlists = Wantedlist.new
   end
 
   def show
-    @cosmetician = Cosmetician.find(params[:id])
+    @wantedlists = Wantedlist.find(params[:id])
   end
 
 
   def create
-    @wantedlist = Wantedlist.new(params[:wantedlist])
-    if @wantedlist.save
-      render 'show' 
+    @wantedlists = Wantedlist.new(params[:wantedlist])
+    if @wantedlists.save
+      render 'show'
     else
       render 'new'
     end
