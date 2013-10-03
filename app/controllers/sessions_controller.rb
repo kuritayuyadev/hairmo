@@ -29,7 +29,13 @@ class SessionsController < ApplicationController
 			redirect_back_or cosmetician
 		else
 			Cosmetician.create_with_omniauth(auth)
-			redirect_to root_path
+			cosmetician = Cosmetician.find_by_provider_and_uid(auth["provider"],auth["uid"])
+			if cosmetician
+				sign_in cosmetician
+				redirect_to cosmetician
+			else
+				redirect_to root_path
+			end
 		end
 	end
 end

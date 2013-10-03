@@ -2,7 +2,10 @@
 	<h1>Home</h1>
 	<p>Hi! Sign up Now !!</p>
 	<p>This Home Page is for first visited user</p>
-	<%= link_to "SIGN UP NOW", signup_path%>
-	<%= link_to "facebookでlogin", "/auth/facebook" %>
+	<ul>
+		<li><%= link_to "facebookでlogin", "/auth/facebook" %></li>
+		<!-- Twitter ログインは本番URLが必要なのでherokuに挙げた後-->
+		<li><%= link_to "Twitterでログイン", "/auth/twitter" %></li>	
+	</ul>
 </div>
 
