@@ -1,5 +1,58 @@
-<%= @wantedlist %>
+<%= form_for @wantedlists, :url => {:action => 'create'} do |f| %>
+<%= render 'shared/error_messages' %>
+<b>
+<%= f.label :name %>
+</b>
+<br/>
+<%= f.text_field :name %>
+<br/>
 
-<h1>テスト</h1>
+
+<div class="field">
+<b>
+<%= f.label :days %>
+</b>
+<br/>
+<%= f.text_field :days,:class => 'datepicker' %>
+</div>
+<br/>
+
+<b>
+<%= f.label :sex %>
+</b>
+<br/>
+man
+<%= f.radio_button 'sex', '0', {:checked => true} %>
+woman
+<%= f.radio_button 'sex', '1' %>
+<br/>
+
+<b>
+<%= f.label :hair_style %>
+</b>
+<br/>
+<%= f.select :hair_style,{"long" => "long","short" =>"short"}, :prompt => "Please select" %>
+<br/>
 
 
+
+<b>
+<%= f.label :price %>
+</b>
+<br/>
+<%= f.text_field :price %>
+<br/>
+
+
+<b>
+<%= f.label :memo %>
+</b>
+<br/>
+<%= f.text_field :memo %>
+<br/>
+
+
+
+
+<%= f.submit "Create my list", class: "btn btn-large btn-primary" %>
+<% end %>

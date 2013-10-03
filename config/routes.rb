@@ -24,10 +24,6 @@ Hairmo::Application.routes.draw do
 
 
 
-
-
-
-##################### no edited ###############################
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

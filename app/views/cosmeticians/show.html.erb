@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <h1>Cosmeticians#show</h1>
 
 <!-- gravatar_for @cosmetician -->
@@ -6,12 +5,14 @@
 <%= @cosmetician.area_id%>
 <%= @cosmetician.salon_address %>
 <%= @cosmetician.salon_name %>
-=======
-<h1><%= @cosmetician.name %>
-<%= gravatar_for @cosmetician %>
-</h1>,
-  
+<br/>
 
-
-<%= @cosmetician.email %>
->>>>>>> test page
+<div class="span8">
+<% if @cosmetician.wantedlists.any? %>
+<h3>Wantedlitsts (<%= @cosmetician.wantedlists.count %>)</h3>
+<ol class="wantedlists">
+<%= render @wantedlists %>
+</ol>
+<%= will_paginate @wantedlists %>
+<% end %>
+</div>
