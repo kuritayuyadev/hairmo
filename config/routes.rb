@@ -18,7 +18,7 @@ Hairmo::Application.routes.draw do
   #facebook login 
   #OmniAuth
   match "/auth/:provider/callback" => "sessions#callback"
-  match "/logout" => "sessions#destroy", :as => :logout
+  match "/signout" => "sessions#destroy", :as => :logout
 
 
 
