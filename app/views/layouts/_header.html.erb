@@ -4,13 +4,13 @@
 		<li><%=link_to "Home",root_path %></li>
 		<li><%=link_to "Help",help_path %></li>
 		<% if signed_in? %>
-			<li><%= link_to "Cosmeticians", cosmeticians_path %></li>
+			<li><%= link_to "Cosmeticians", cosmeticians_list_path %></li>
 			<li>
 				<a href="#">Account</a>
 				<ul>
 					<li><%= link_to "Profile", current_cosmetician %></li>
 					<li><%= link_to "Settings", edit_cosmetician_path(current_cosmetician) %></li>
-					<li></li>
+					<li><%= link_to "new post", newpost_path %></li>
 					<li>
 						<%= link_to "Sign out", signout_path, method: "delet" %>
 					</li>

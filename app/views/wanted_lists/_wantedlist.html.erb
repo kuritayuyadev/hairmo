@@ -1,4 +1,9 @@
 <li>
-<span class="name"><%= wantedlist.name %></span>
-  </span>
+<span class="name"><%= @wanted_lists.name %></span>
+
+<% if current_cosmetician?(wanted_list.cosmetician) %>
+	<%= link_to "delete", wanted_list, method: :delete,
+				data: { confirm: "You sure?" },
+				title: wanted_list.name %>
+<% end %>
 </li>

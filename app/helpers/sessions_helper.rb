@@ -26,6 +26,13 @@ module SessionsHelper
 		cosmetician == current_cosmetician
 	end
 
+	def signed_in_cosmetician
+		unless signed_in?
+			store_location
+			redirect_to signin_url
+		end
+	end
+
 	def redirect_back_or(default)
 		redirect_to(session[:return_to]||default)
 		session.delete(:return_to)

@@ -1,6 +1,6 @@
 class Cosmetician < ActiveRecord::Base
   attr_accessible :area_id, :email, :name, :salon_address, :salon_name, :provider, :uid
-  has_many :wantedlists,dependent: :destroy,foreign_key: "cosmeticians_id"
+  has_many :wanted_lists,dependent: :destroy
 
   #has_secure_password
   before_save {|cosmetician| cosmetician.email = email} #email.downcase
@@ -20,6 +20,11 @@ class Cosmetician < ActiveRecord::Base
 		end
 	end
   end
+
+  def feed 
+	  WantedList.where("cosmetician_id = ?",id)
+  end
+
 
 
 

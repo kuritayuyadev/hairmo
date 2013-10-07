@@ -1,24 +1,27 @@
 class WantedListsController < ApplicationController
+  before_filter :signed_in_cosmetician
+  before_filter :correct_cosmetician, only: :destroy
 
 
   def index
-
   end
 
 
 
   def new
-    @wantedlists = Wantedlist.new
+    @wanted_lists = WantedList.new
   end
 
   def show
-    @wantedlists = Wantedlist.find(params[:id])
+    @wanted_lists = WantedList.find(params[:id])
+	@item = WantedList.find(params[:id])
+	@cosmetician = current_cosmetician
   end
 
 
   def create
-    @wantedlists = Wantedlist.new(params[:wantedlist])
-    if @wantedlists.save
+    @wanted_lists = current_cosmetician.wanted_lists.build(params[:wanted_list])
+    if @wanted_lists.save
       render 'show'
     else
       render 'new'
@@ -28,6 +31,16 @@ class WantedListsController < ApplicationController
   def edit
   end
 
-  def delete
+  def destroy
+	  @wanted_list.destroy
+	  redirect_to root_path
   end
+
+
+  private
+  def correct_cosmetician
+	  @wanted_list = current_cosmetician.wanted_lists.find_by_id(params[:id])
+	  redirect_to root_url if @wanted_list.nil?
+  end
+
 end

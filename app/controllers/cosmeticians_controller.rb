@@ -7,13 +7,20 @@ class CosmeticiansController < ApplicationController
     @cosmeticians = Cosmetician.paginate(page: params[:page])
   end
 
+  def all_cosmeticians
+    @cosmeticians = Cosmetician.paginate(page: params[:page])
+  end
+
   def new
     @cosmetician = Cosmetician.new
   end
 
   def show
-    @cosmetician = Cosmetician.find(params[:id])
-    @wantedlists = @cosmetician.wantedlists.paginate(page:params[:page])
+    @cosmetician = current_cosmetician
+	#@wanted_list = current_cosmetician.wanted_lists.build if signed_in?
+	#@wanted_lists = @cosmetician.wanted_lists.paginate(page:params[:page])
+	@wanted_list = current_cosmetician.wanted_lists.find_by_id(params[:id])
+	@feed_items = current_cosmetician.feed.paginate(page:params[:page])
   end
 
   def create
@@ -55,12 +62,6 @@ class CosmeticiansController < ApplicationController
 
   private
 
-  def signed_in_cosmetician
-    unless signed_in?
-      store_location
-      redirect_to signin_url,notice:"please sign in."
-    end
-  end
 
   def correct_cosmetician
     @cosmetician = Cosmetician.find(params[:id])

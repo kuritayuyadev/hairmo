@@ -1,6 +1,6 @@
 Hairmo::Application.routes.draw do
   resources :cosmeticians
-  resources :wanted_lists
+  resources :wanted_lists, only: [:new,:create,:destroy,:show]
   resources :sessions, only: [:new,:create,:destroy]
   #static page routes
   root to: 'static_pages#home'
@@ -11,6 +11,8 @@ Hairmo::Application.routes.draw do
 
   #Sign up by cosmeticians controller
   match '/signup',  to:'cosmeticians#new'
+
+
   #Sign in/out by session controller
   match '/signin',	to:'sessions#new'
   match '/signout', to:'sessions#destroy', via: :destroy
@@ -19,6 +21,15 @@ Hairmo::Application.routes.draw do
   #OmniAuth
   match "/auth/:provider/callback" => "sessions#callback"
   match "/signout" => "sessions#destroy", :as => :logout
+
+  #wanted_list
+  match "/newpost" => "wanted_lists#new"
+  match "/wated_lists/:id" => "wanted_lists#show"
+
+  #cosmetician
+  match "/cosmeticians" => "cosmeticians#show"
+  match "/cosmeticians_list" => "cosmeticians#all_cosmeticians"
+
 
 
 

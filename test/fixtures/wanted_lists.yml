@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  days: MyString
+  sex: false
+  hair_style: MyString
+  price: 1
+  memo: MyString
+  cosmetician_id: 1
+
+two:
+  name: MyString
+  days: MyString
+  sex: false
+  hair_style: MyString
+  price: 1
+  memo: MyString
+  cosmetician_id: 1

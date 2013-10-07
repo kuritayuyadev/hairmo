@@ -12,6 +12,8 @@ gem 'omniauth-facebook'
 gem 'omniauth-twitter'
 gem 'better_errors'
 gem 'binding_of_caller'
+gem 'jquery-rails', '2.0.2'
+gem 'jquery-ui-rails'
 
 group :development, :test do
     gem 'sqlite3','1.3.5'
@@ -30,8 +32,6 @@ group :development do
   gem 'annotate', '2.5.0'
   gem 'better_errors'
   gem 'binding_of_caller'
-  gem 'jquery-rails', '2.0.2'
-
 end
 
 group :test do

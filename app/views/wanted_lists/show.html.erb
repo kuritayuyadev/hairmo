@@ -1,13 +1,19 @@
-<h1>name <%= @wantedlists.name %><br/></h1>
-days <%= @wantedlists.days %><br/>
-sex
-<% if @wantedlists.sex == true  %>
-woman
-<% else %>
-man
-<% end %>
+<h1>name <%= @wanted_lists.name %><br/></h1>
+<ul>
+	<li>days <%= @wanted_lists.days %></li>
+	<li>sex
+	<% if @wanted_lists.sex == true  %>
+		woman
+	<% else %>
+		man
+	<% end %></li>
+	
+	<li>hair_style <%= @wanted_lists.hair_style %></li>
+	<li>price <%= @wanted_lists.price %></li>
+	<li>memo <%= @wanted_lists.memo %></li>
+</ul>
+
 <br/>
-hair_style <%= @wantedlists.hair_style %><br/>
-price <%= @wantedlists.price %><br/>
-memo <%= @wantedlists.memo %><br/>
+<br/>
+<%= link_to 'to MyPege', root_path %>
 

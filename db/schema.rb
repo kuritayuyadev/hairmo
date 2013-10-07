@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131003130152) do
+ActiveRecord::Schema.define(:version => 20131006121522) do
 
   create_table "areas", :force => true do |t|
     t.string   "name"
@@ -28,25 +28,36 @@ ActiveRecord::Schema.define(:version => 20131003130152) do
     t.datetime "created_at",                                     :null => false
     t.datetime "updated_at",                                     :null => false
     t.string   "remember_token"
+    t.boolean  "admin",                       :default => false
     t.string   "provider"
     t.integer  "uid",            :limit => 8
-    t.boolean  "admin",                       :default => false
     t.string   "image"
   end
 
   add_index "cosmeticians", ["remember_token"], :name => "index_cosmeticians_on_remember_token"
 
-  create_table "wantedlists", :force => true do |t|
-    t.integer  "cosmeticians_id"
+  create_table "wanted_lists", :force => true do |t|
     t.string   "name"
-    t.string   "days_old"
+    t.string   "days"
     t.boolean  "sex"
     t.string   "hair_style"
     t.integer  "price"
     t.string   "memo"
-    t.datetime "created_at",      :null => false
-    t.datetime "updated_at",      :null => false
-    t.time     "days"
+    t.integer  "cosmetician_id"
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
+  end
+
+  create_table "wantedlists", :force => true do |t|
+    t.string   "name"
+    t.string   "days"
+    t.boolean  "sex"
+    t.string   "hair_style"
+    t.integer  "price"
+    t.string   "memo"
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
+    t.integer  "cosmetician_id"
   end
 
 end

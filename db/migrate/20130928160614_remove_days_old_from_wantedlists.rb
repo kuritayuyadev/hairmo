@@ -1,4 +1,4 @@
-class RemoveDaysOldFromWantedlists < ActiveRecord::Migration
+class RemoveDaysOldFromWantedLists < ActiveRecord::Migration
   def up
   end
 
