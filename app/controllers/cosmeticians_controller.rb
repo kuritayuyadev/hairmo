@@ -19,7 +19,7 @@ class CosmeticiansController < ApplicationController
     @cosmetician = current_cosmetician
 	#@wanted_list = current_cosmetician.wanted_lists.build if signed_in?
 	#@wanted_lists = @cosmetician.wanted_lists.paginate(page:params[:page])
-	@wanted_list = current_cosmetician.wanted_lists.find_by_id(params[:id])
+	@item = WantedList.find_by_id(params[:id])
 	@feed_items = current_cosmetician.feed.paginate(page:params[:page])
   end
 

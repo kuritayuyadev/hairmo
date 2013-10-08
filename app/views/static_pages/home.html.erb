@@ -1,11 +1,13 @@
 <div>
 	<h1>Home</h1>
+	<% if signed_in? %>
+	<% else%>
 	<p>Hi! Sign up Now !!</p>
 	<p>This Home Page is for first visited user</p>
 	<ul>
 		<li><%= link_to "facebookでlogin", "/auth/facebook" %></li>
-		<!-- Twitter ログインは本番URLが必要なのでherokuに挙げた後-->
+		<!-- noztomcheck Twitter ログインは本番URLが必要なのでherokuに挙げた後-->
 		<li><%= link_to "Twitterでログイン", "/auth/twitter" %></li>	
-	</ul>
+	<%end%>
 </div>
 

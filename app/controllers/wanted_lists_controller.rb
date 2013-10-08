@@ -13,7 +13,8 @@ class WantedListsController < ApplicationController
   end
 
   def show
-    @wanted_lists = WantedList.find(params[:id])
+    @wanted_lists = WantedList.find_by_id(params[:id])
+	@item = current_cosmetician.wanted_lists.find_by_id(params[:id])
 	@item = WantedList.find(params[:id])
 	@cosmetician = current_cosmetician
   end
@@ -21,14 +22,25 @@ class WantedListsController < ApplicationController
 
   def create
     @wanted_lists = current_cosmetician.wanted_lists.build(params[:wanted_list])
+	cosmetician = current_cosmetician
     if @wanted_lists.save
-      render 'show'
+      redirect_to cosmetician
     else
       render 'new'
     end
   end
 
   def edit
+	  @wanted_list = WantedList.find(params[:id])
+  end
+
+  def update
+	  @wanted_list = WantedList.find_by_id(params[:id])
+	  if @wanted_list.update_attributes(params[:wanted_list])
+		  redirect_to @wanted_list
+	  else
+		  render 'edit'
+	  end
   end
 
   def destroy

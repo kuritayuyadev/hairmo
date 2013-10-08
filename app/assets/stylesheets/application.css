@@ -12,3 +12,20 @@
  *= require_tree .
  *= require_tree ./jquery-ui
  */
+
+header{
+	margin-left:43%;
+	margin-top:50px;
+}
+
+header div>ul>li {
+	margin-right:10px;
+	float:left;
+}
+
+div#content {
+	margin-top:250px;
+}
+
+
+

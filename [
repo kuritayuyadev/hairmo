@@ -1,7 +1,7 @@
 <h1>WantedLists#edit</h1>
 <h1>Update your post</h1>
 
-<%= form_for(@wanted_list) do |f| %>
+<%= form_for @wanted_list do |f| %>
 	<ul>
 		<li><%= f.label :name %>
 		<%= f.text_field :name %></li>

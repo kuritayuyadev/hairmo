@@ -1,6 +1,6 @@
 Hairmo::Application.routes.draw do
   resources :cosmeticians
-  resources :wanted_lists, only: [:new,:create,:destroy,:show]
+  resources :wanted_lists, only: [:new,:create,:destroy,:show,:edit,:update]
   resources :sessions, only: [:new,:create,:destroy]
   #static page routes
   root to: 'static_pages#home'
@@ -24,7 +24,8 @@ Hairmo::Application.routes.draw do
 
   #wanted_list
   match "/newpost" => "wanted_lists#new"
-  match "/wated_lists/:id" => "wanted_lists#show"
+  match "/wanted_lists/:id" => "wanted_lists#show"
+  match "/wanted_lists/:id/edit" => "wanted_lists#edit"
 
   #cosmetician
   match "/cosmeticians" => "cosmeticians#show"
