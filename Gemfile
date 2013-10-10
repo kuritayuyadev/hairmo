@@ -14,10 +14,6 @@ gem 'binding_of_caller'
 gem 'jquery-rails', '2.0.2'
 gem 'jquery-ui-rails'
 
-group :development, :test do
-    gem 'sqlite3','1.3.5'
-    gem 'rspec-rails', '2.11.0'
-end
 
 # assetsでは使うが、
 # # 本番環境ではデフォルトで不要なGem
